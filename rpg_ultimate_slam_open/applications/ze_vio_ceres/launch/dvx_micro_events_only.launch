@@ -17,17 +17,17 @@
     --flagfile=$(find ze_vio_ceres)/cfg/vio_base.conf
     --flagfile=$(find ze_vio_ceres)/cfg/vio_dvx.conf
 
-    --data_interval_between_event_packets=4  # events-only pipeline: interval between successive event frames.
-    --data_use_time_interval=true  # events-only pipeline: if true, data_interval_between_event_packets is interpreted as milliseconds, otherwise as number of events
+    --data_interval_between_event_packets=50000  # events-only pipeline: interval between successive event frames.
+    --data_use_time_interval=false  # events-only pipeline: if true, data_interval_between_event_packets is interpreted as milliseconds, otherwise as number of events
 
     --data_size_augmented_event_packet=80000  # max number of events per event frame (should be >= vio_frame_size)
-    --vio_frame_size=40000  # each event frame will be drawn with that number of events
+    --vio_frame_size=30000  # each event frame will be drawn with that number of events
     --vio_do_motion_correction=1
-    --noise_event_rate=10000
+    --noise_event_rate=20000
     --vio_frame_norm_factor=4.0
 
     --vio_trace_pose=True
-    --log_dir=/tmp/edged_uslam_run
+    --log_dir=/tmp/uslamrun
     --vmodule=feature_tracker=0
     --colorlogtostderr=1
     --logtostderr=1
